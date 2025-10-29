@@ -1,6 +1,6 @@
-# Contributing to terraform-terraform-namer
+# Contributing to terraform-azurerm-windows-virtual-machine
 
-Thank you for your interest in contributing to the terraform-terraform-namer module! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to the terraform-azurerm-windows-virtual-machine module! This document provides guidelines and instructions for contributing.
 
 ## Table of Contents
 

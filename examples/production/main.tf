@@ -106,7 +106,7 @@ module "windows_vm_prod" {
   # ============================================================================
   data_disks = [
     {
-      disk_size_gb         = 256                # P15: 256 GB, 1,100 IOPS, 125 MB/s
+      disk_size_gb         = 256 # P15: 256 GB, 1,100 IOPS, 125 MB/s
       lun                  = 0
       caching              = "ReadWrite"
       storage_account_type = "Premium_LRS"
@@ -156,8 +156,8 @@ module "windows_vm_prod" {
   # ============================================================================
   # Security Extensions
   # ============================================================================
-  enable_antimalware = true  # Microsoft Antimalware (no additional cost)
-  enable_bginfo      = true  # Desktop info display (no additional cost)
+  enable_antimalware = true # Microsoft Antimalware (no additional cost)
+  enable_bginfo      = true # Desktop info display (no additional cost)
 
   # ============================================================================
   # OS Image: Windows Server 2022 Generation 2
@@ -226,7 +226,7 @@ output "identity_principal_id" {
 }
 
 output "estimated_monthly_cost" {
-  value = <<-EOT
+  value       = <<-EOT
     Estimated monthly cost in US Central region:
 
     Pay-as-you-go:          ~$100/month
