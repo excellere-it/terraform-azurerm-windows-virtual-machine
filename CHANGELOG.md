@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2025-10-30
+
+### Added
+- Added `enable_automatic_updates` variable (defaults to `true`)
+  - Controls automatic Windows Updates behavior
+  - Must be set to `false` when using `patch_mode = "Manual"`
+  - Enables proper configuration for golden images and controlled patching scenarios
+
+### Fixed
+- Fixed deployment error for Windows VMs with Manual patch mode
+  - Azure requires `enable_automatic_updates = false` when `patch_mode = "Manual"`
+  - Previously would fail with: "For patchMode 'Manual', the property 'enableAutomaticUpdates' must be set to false"
+
 ## [0.0.4] - 2025-10-30
 
 ### Changed

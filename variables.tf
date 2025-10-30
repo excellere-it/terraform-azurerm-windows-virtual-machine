@@ -278,6 +278,12 @@ variable "patch_assessment_mode" {
   }
 }
 
+variable "enable_automatic_updates" {
+  type        = bool
+  description = "Enable automatic Windows Updates. Must be false when patch_mode is Manual"
+  default     = true
+}
+
 # =============================================================================
 # Optional Variables - Encryption Configuration
 # =============================================================================
