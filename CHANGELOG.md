@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2025-10-30
+
+### Changed
+- Updated terraform-namer module source to use Terraform Cloud registry format
+  - Changed from relative path `../terraform-terraform-namer` to `app.terraform.io/infoex/namer/terraform`
+  - Pinned version to `0.0.3`
+  - Ensures consistent module resolution in Terraform Cloud workflows
+
 ## [0.0.1] - 2025-10-30
 
 ### Added
@@ -52,5 +60,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - 3 basic tests
   - 100% feature coverage
 
-[unreleased]: https://github.com/excellere-it/terraform-azurerm-windows-virtual-machine/compare/v0.0.1...HEAD
+[unreleased]: https://github.com/excellere-it/terraform-azurerm-windows-virtual-machine/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/excellere-it/terraform-azurerm-windows-virtual-machine/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/excellere-it/terraform-azurerm-windows-virtual-machine/releases/tag/v0.0.1
