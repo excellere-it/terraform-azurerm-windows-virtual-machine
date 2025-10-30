@@ -167,10 +167,10 @@ variable "os_disk_size_gb" {
   }
 }
 
-variable "enable_disk_encryption_set" {
-  type        = bool
-  description = "Enable disk encryption set for the OS disk"
-  default     = false
+variable "disk_encryption_set_id" {
+  type        = string
+  description = "ID of the Disk Encryption Set for customer-managed key (CMK) encryption. Enables encryption with customer-managed keys stored in Azure Key Vault. Required for HIPAA, PCI-DSS Level 1, and FedRAMP compliance"
+  default     = null
 }
 
 # =============================================================================
@@ -281,6 +281,16 @@ variable "patch_assessment_mode" {
     condition     = contains(["AutomaticByPlatform", "ImageDefault"], var.patch_assessment_mode)
     error_message = "Patch assessment mode must be AutomaticByPlatform or ImageDefault"
   }
+}
+
+# =============================================================================
+# Optional Variables - Encryption Configuration
+# =============================================================================
+
+variable "enable_encryption_at_host" {
+  type        = bool
+  description = "Enable encryption at host for double encryption (encryption at both the VM host/hypervisor level AND server-side encryption). Requires VM size support and subscription feature registration. Provides defense-in-depth against VM escape vulnerabilities. Required for Azure Confidential Computing"
+  default     = false
 }
 
 # =============================================================================

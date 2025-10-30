@@ -128,10 +128,11 @@ resource "azurerm_windows_virtual_machine" "this" {
 
   # OS Disk Configuration
   os_disk {
-    name                 = "osdisk-${module.naming.resource_suffix_vm}"
-    caching              = var.os_disk_caching
-    storage_account_type = var.os_disk_storage_account_type
-    disk_size_gb         = var.os_disk_size_gb
+    name                   = "osdisk-${module.naming.resource_suffix_vm}"
+    caching                = var.os_disk_caching
+    storage_account_type   = var.os_disk_storage_account_type
+    disk_size_gb           = var.os_disk_size_gb
+    disk_encryption_set_id = var.disk_encryption_set_id
   }
 
   # OS Image Configuration
@@ -143,8 +144,9 @@ resource "azurerm_windows_virtual_machine" "this" {
   }
 
   # Security Configuration (Generation 2 VMs)
-  secure_boot_enabled = var.enable_secure_boot
-  vtpm_enabled        = var.enable_vtpm
+  secure_boot_enabled        = var.enable_secure_boot
+  vtpm_enabled               = var.enable_vtpm
+  encryption_at_host_enabled = var.enable_encryption_at_host
 
   # Boot Diagnostics
   boot_diagnostics {
@@ -183,12 +185,13 @@ resource "azurerm_windows_virtual_machine" "this" {
 resource "azurerm_managed_disk" "data" {
   for_each = { for idx, disk in var.data_disks : idx => disk }
 
-  name                 = "datadisk-${module.naming.resource_suffix_vm}-${each.key}"
-  location             = var.location
-  resource_group_name  = var.resource_group_name
-  storage_account_type = each.value.storage_account_type
-  create_option        = "Empty"
-  disk_size_gb         = each.value.disk_size_gb
+  name                   = "datadisk-${module.naming.resource_suffix_vm}-${each.key}"
+  location               = var.location
+  resource_group_name    = var.resource_group_name
+  storage_account_type   = each.value.storage_account_type
+  create_option          = "Empty"
+  disk_size_gb           = each.value.disk_size_gb
+  disk_encryption_set_id = var.disk_encryption_set_id
 
   zone = var.availability_zone
 

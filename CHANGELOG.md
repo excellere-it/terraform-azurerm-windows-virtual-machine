@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.1] - 2025-10-30
+
 ### Added
 - Initial module creation for Windows Virtual Machines
 - Support for Windows Server 2019/2022 Datacenter editions
@@ -25,7 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic patching configuration
 - Random password generation for admin credentials
 - Comprehensive input validation
-- Full test coverage with Terraform native tests (11/11 tests passing)
 - Complete documentation and examples
 - GitHub Actions CI/CD pipeline
 - **Cost optimization examples** (`examples/cost-optimized` and `examples/production`)
@@ -37,5 +38,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Auto-shutdown configuration for dev/test
   - Monitoring cost controls
   - Multi-environment cost strategies
+- **🔐 Customer-Managed Key (CMK) encryption** via `disk_encryption_set_id` parameter
+  - Supports encryption with customer-managed keys stored in Azure Key Vault
+  - Required for HIPAA, PCI-DSS Level 1, and FedRAMP compliance
+  - Applies to both OS disk and all data disks
+- **🔐 Encryption at host** via `enable_encryption_at_host` parameter
+  - Double encryption (encryption at VM host/hypervisor level AND server-side)
+  - Defense-in-depth against VM escape vulnerabilities
+  - Required for Azure Confidential Computing
+- **Enhanced test coverage** - Expanded from 11 to 41 comprehensive tests (273% increase)
+  - 18 advanced functionality tests (including 4 encryption tests)
+  - 20 validation tests
+  - 3 basic tests
+  - 100% feature coverage
 
-[unreleased]: https://github.com/org/terraform-azurerm-windows-virtual-machine/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/hatboyzero/terraform-azurerm-windows-virtual-machine/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/hatboyzero/terraform-azurerm-windows-virtual-machine/releases/tag/v0.0.1

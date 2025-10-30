@@ -140,3 +140,17 @@ output "antimalware_extension_id" {
   value       = try(azurerm_virtual_machine_extension.antimalware[0].id, null)
   description = "The ID of the Antimalware extension"
 }
+
+# =============================================================================
+# Encryption Outputs
+# =============================================================================
+
+output "encryption_at_host_enabled" {
+  value       = var.enable_encryption_at_host
+  description = "Whether encryption at host is enabled for double encryption"
+}
+
+output "disk_encryption_set_id" {
+  value       = var.disk_encryption_set_id
+  description = "The Disk Encryption Set ID used for customer-managed key encryption (null if using platform-managed keys)"
+}
