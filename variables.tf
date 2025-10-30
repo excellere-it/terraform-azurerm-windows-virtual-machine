@@ -117,11 +117,6 @@ variable "os_image_sku" {
   type        = string
   description = "The SKU of the OS image (e.g., 2022-datacenter-g2, 2019-datacenter-gensecond)"
   default     = "2022-datacenter-g2"
-
-  validation {
-    condition     = contains(["2022-datacenter-g2", "2022-datacenter-azure-edition", "2019-datacenter-gensecond", "2019-datacenter", "2022-datacenter"], var.os_image_sku)
-    error_message = "OS image SKU must be a supported Windows Server version"
-  }
 }
 
 variable "os_image_version" {

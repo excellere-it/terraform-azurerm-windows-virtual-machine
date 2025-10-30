@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2025-10-30
+
+### Changed
+- Removed restrictive validation for `os_image_sku` variable
+  - Previously only allowed Windows Server SKUs (2022-datacenter-g2, 2019-datacenter, etc.)
+  - Now accepts any valid SKU including Windows 11 Enterprise (win11-24h2-ent, win11-24h2-entn, etc.)
+  - Enables support for Windows 10/11 client OS deployments
+  - Allows AVD-optimized images (win11-24h2-avd-m365)
+
 ## [0.0.3] - 2025-10-30
 
 ### Changed
