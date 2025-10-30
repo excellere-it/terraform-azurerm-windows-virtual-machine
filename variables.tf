@@ -340,8 +340,8 @@ variable "environment" {
   description = "Environment name (dev, stg, prd, etc.)"
 
   validation {
-    condition     = contains(["dev", "stg", "prd", "sbx", "tst", "ops", "hub"], var.environment)
-    error_message = "Environment must be one of: dev, stg, prd, sbx, tst, ops, hub"
+    condition     = contains(["ctx", "dev", "stg", "prd", "sbx", "tst", "ops", "hub"], var.environment)
+    error_message = "Environment must be one of: ctx, dev, stg, prd, sbx, tst, ops, hub"
   }
 }
 
