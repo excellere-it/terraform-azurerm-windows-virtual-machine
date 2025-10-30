@@ -52,5 +52,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - 3 basic tests
   - 100% feature coverage
 
-[unreleased]: https://github.com/hatboyzero/terraform-azurerm-windows-virtual-machine/compare/v0.0.1...HEAD
-[0.0.1]: https://github.com/hatboyzero/terraform-azurerm-windows-virtual-machine/releases/tag/v0.0.1
+[unreleased]: https://github.com/excellere-it/terraform-azurerm-windows-virtual-machine/compare/v0.0.1...HEAD
+[0.0.1]: https://github.com/excellere-it/terraform-azurerm-windows-virtual-machine/releases/tag/v0.0.1
